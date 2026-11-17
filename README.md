@@ -89,18 +89,18 @@ $$
 Use **final `DONE` log rows** only. The physical tape measurement must be entered manually; commanded distance is not ground truth. Implemented in `scripts/analyze.py`.
 
 
-**7. Cross-trial sample covariance**
+### 7. Cross-trial sample covariance
 
 For odometry-only errors $e_{o,i}$ and corrected errors $e_{c,i}$:
 
-$$
-\mathrm{Cov}(e_o,e_c) =
+```math
+\mathrm{Cov}(e_o,e_c)
+=
 \frac{1}{N-1}
 \sum_{i=1}^{N}
 \left(e_{o,i}-\bar{e}_o\right)
 \left(e_{c,i}-\bar{e}_c\right)
-$$
-
+```
 This is an empirical statistic calculated across completed trials, not a filter covariance matrix. The fixed-gain estimator does not propagate a covariance matrix.
 
 
@@ -211,8 +211,6 @@ All values below are recomputed directly from [`data/trial_endpoints.csv`](data/
 | Error span | 0.164000 m | Maximum minus minimum |
 | Sample covariance (estimate, tape) | 0.018570 m² | Co-variation of estimated and tape distances |
 
-The sample covariance between estimated and tape distances is
-
 The sample covariance between estimated and tape-measured
 final distances is
 
@@ -246,3 +244,4 @@ python3 scripts/plot_endpoints.py
 | Odometry used | **ROS inputs**: RoboMaster `/odom` position and orientation; projected forward increments provide distance prediction. |
 | Scatter plot for every trial | `docs/figures/error_scatter.png` and `docs/figures/individual_trials.png`. |
 | Variance and covariance | **Statistical analysis** above; sample variance of errors and sample covariance of estimate versus tape. |
+
