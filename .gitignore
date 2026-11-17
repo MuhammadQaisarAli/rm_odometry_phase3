@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+install/
+log/
+results/*.png
+results/*.json
+results/*.csv
+/data/trial_*.csv
+/.ruff_cache/
