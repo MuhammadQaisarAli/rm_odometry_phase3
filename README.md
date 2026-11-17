@@ -213,14 +213,25 @@ All values below are recomputed directly from [`data/trial_endpoints.csv`](data/
 
 The sample covariance between estimated and tape distances is
 
+The sample covariance between estimated and tape-measured
+final distances is
+
 $$
-\operatorname{Cov}(\hat d,d_{\mathrm{tape}})
-=\frac{1}{N-1}\sum_{i=1}^{N}
-(\hat d_i-\overline{\hat d})(d_{\mathrm{tape},i}-\bar d_{\mathrm{tape}}).
+\mathrm{Cov}(\hat{d},d_{\mathrm{tape}})
+=
+\frac{1}{N-1}
+\sum_{i=1}^{N}
+\left(\hat{d}_i-\overline{\hat{d}}\right)
+\left(d_{\mathrm{tape},i}-\bar{d}_{\mathrm{tape}}\right)
 $$
 
-Every signed error is negative, indicating systematic underestimation of final clearance in this dataset. The mean absolute error is 12.8 cm. The eight measured final clearances vary from 0.10 m to 0.50 m. The covariance above is an **empirical cross-trial statistic**, not a Kalman-filter covariance; the implemented correction uses a fixed gain.
+Every signed error is negative, indicating systematic
+underestimation of final clearance in this dataset.
+The mean absolute error is 12.8 cm.
 
+The covariance above is an empirical cross-trial statistic,
+not a Kalman-filter covariance. The implemented correction
+uses a fixed gain.
 To regenerate the plots and statistics after editing the CSV:
 
 ```bash
@@ -235,4 +246,3 @@ python3 scripts/plot_endpoints.py
 | Odometry used | **ROS inputs**: RoboMaster `/odom` position and orientation; projected forward increments provide distance prediction. |
 | Scatter plot for every trial | `docs/figures/error_scatter.png` and `docs/figures/individual_trials.png`. |
 | Variance and covariance | **Statistical analysis** above; sample variance of errors and sample covariance of estimate versus tape. |
-| Video demonstration | Add the URL for the recorded experiment below. |
