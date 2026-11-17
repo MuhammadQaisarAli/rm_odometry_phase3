@@ -1,11 +1,11 @@
 __pycache__/
 *.pyc
-*.egg-info/
+.pytest_cache/
+.venv/
 build/
 install/
 log/
-results/*.png
-results/*.json
-results/*.csv
-/data/trial_*.csv
-/.ruff_cache/
+logs/
+*.egg-info/
+.vscode/
+.DS_Store
