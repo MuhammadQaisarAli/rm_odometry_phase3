@@ -88,18 +88,21 @@ $$
 
 Use **final `DONE` log rows** only. The physical tape measurement must be entered manually; commanded distance is not ground truth. Implemented in `scripts/analyze.py`.
 
-### 7. Cross-trial sample covariance For odometry-only errors `e_o,i` and corrected errors `e_c,i`:
+
+**7. Cross-trial sample covariance**
+
+For odometry-only errors $e_{o,i}$ and corrected errors $e_{c,i}$:
 
 $$
-\mathrm{Cov}(e_o,e_c)
-=
+\mathrm{Cov}(e_o,e_c) =
 \frac{1}{N-1}
 \sum_{i=1}^{N}
 \left(e_{o,i}-\bar{e}_o\right)
 \left(e_{c,i}-\bar{e}_c\right)
 $$
 
-This is an empirical statistic across completed trials, **not a filter covariance matrix**. The filter itself propagates no covariance.
+This is an empirical statistic calculated across completed trials, not a filter covariance matrix. The fixed-gain estimator does not propagate a covariance matrix.
+
 
 ## Environment and build
 
