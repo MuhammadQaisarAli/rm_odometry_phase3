@@ -214,14 +214,14 @@ All values below are recomputed directly from [`data/trial_endpoints.csv`](data/
 The sample covariance between estimated and tape-measured
 final distances is
 
-$$
+```math
 \mathrm{Cov}(\hat{d},d_{\mathrm{tape}})
 =
 \frac{1}{N-1}
 \sum_{i=1}^{N}
 \left(\hat{d}_i-\overline{\hat{d}}\right)
 \left(d_{\mathrm{tape},i}-\bar{d}_{\mathrm{tape}}\right)
-$$
+```
 
 Every signed error is negative, indicating systematic
 underestimation of final clearance in this dataset.
