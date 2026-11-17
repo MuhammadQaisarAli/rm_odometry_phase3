@@ -91,9 +91,12 @@ Use **final `DONE` log rows** only. The physical tape measurement must be entere
 ### 7. Cross-trial sample covariance For odometry-only errors `e_o,i` and corrected errors `e_c,i`:
 
 $$
-\operatorname{Cov}(e_o,e_c)
-=\frac{1}{N-1}\sum_{i=1}^{N}
-(e_{o,i}-\bar e_o)(e_{c,i}-\bar e_c).
+\mathrm{Cov}(e_o,e_c)
+=
+\frac{1}{N-1}
+\sum_{i=1}^{N}
+\left(e_{o,i}-\bar{e}_o\right)
+\left(e_{c,i}-\bar{e}_c\right)
 $$
 
 This is an empirical statistic across completed trials, **not a filter covariance matrix**. The filter itself propagates no covariance.
